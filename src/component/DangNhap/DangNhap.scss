@@ -1,0 +1,174 @@
+//trang đăng nhập
+#loginPage {
+    height: 100vh;
+
+    .left-login {
+        background: #f6f6f6;
+        padding: 82px;
+
+        .logo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .loginForm {
+            padding: 0 5rem;
+
+            label {
+                display: block;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            input::-moz-selection {
+                /* Code for Firefox */
+                color: black;
+                background: white;
+            }
+
+            input::selection {
+                color: black;
+                background: white;
+            }
+
+            .loginBtn {
+                width: 162px;
+                height: 40px;
+                background-color: #ff9138;
+                color: white;
+                border-radius: 8px;
+
+                &:hover {
+                    background-color: #f6852a;
+                    border-color: #f6852a;
+                }
+            }
+        }
+
+        
+    }
+    .right-login {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+//trang quên mật khẩu
+#forgotPass {
+    height: 100vh;
+
+    .left-fpass {
+        background: #f6f6f6;
+        padding: 82px;
+
+        .logo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .fpassForm {
+            padding: 0 5rem;
+            text-align: center;
+            label {
+                text-align: center;
+                display: block;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            input::-moz-selection {
+                /* Code for Firefox */
+                color: black;
+                background: white;
+            }
+
+            input::selection {
+                color: black;
+                background: white;
+            }
+
+            .fpassBtn {
+                width: 152px;
+                height: 40px;
+                background-color: #ff9138;
+                color: white;
+                border-radius: 8px;
+
+                &:hover {
+                    background-color: #f6852a;
+                    border-color: #f6852a;
+                }
+            }
+            .cancelBtn{
+                margin-right: 1rem;
+                width: 120px;
+                height: 40px;
+                border-radius: 8px;
+                color:#f6852a;
+                border-color: #f6852a;
+                &:hover {
+                    color: white;
+                    background-color: #f6852a;
+                    border-color: #f6852a;
+                }
+            }
+        }
+    }
+    .right-fpass {
+        padding: 5rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+//trang đặt mật khẩu mới
+#resetPass {
+    height: 100vh;
+
+    .left-rs {
+        background: #f6f6f6;
+        padding: 82px;
+
+        .logo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .rsForm {
+            padding: 0 5rem;
+
+            label {
+                display: block;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            input::-moz-selection {
+                /* Code for Firefox */
+                color: black;
+                background: white;
+            }
+
+            input::selection {
+                color: black;
+                background: white;
+            }
+
+            .confirmBtn {
+                width: 162px;
+                height: 40px;
+                background-color: #ff9138;
+                color: white;
+                border-radius: 8px;
+
+                &:hover {
+                    background-color: #f6852a;
+                    border-color: #f6852a;
+                }
+            }
+        }
+
+        
+    }
+    .right-rs {
+        display: flex;
+        justify-content: center;
+    }
+}
