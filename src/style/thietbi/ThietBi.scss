@@ -1,0 +1,57 @@
+.thietbiContainer {
+    padding: 1rem 2rem;
+    position: relative;
+
+    .thietBiListContainer {
+        .ant-input-search {
+            &:hover {
+                outline: none;
+            }
+            button {
+                border-left: none;
+
+                .anticon {
+                    color: #ff7506;
+                }
+            }
+        }
+        .tableContainer {
+            justify-content: space-between;
+
+            .thietbiTable {
+                .ant-table-thead {
+                    tr {
+                        padding: 1rem 17px;
+                        th {
+                            text-align: center;
+                            /* Orange/$-Orange-400 */
+                            background: #ff9138;
+                            color: white;
+                        }
+                    }
+                }
+                .ant-table-tbody{
+                    tr:nth-child(1n) {
+                        background: #FFFFFF;
+                    }
+                    tr:nth-child(2n) {
+                        background: #FFF2E7;
+                    }
+                }
+            }
+        }
+        .table_thietbi {
+        }
+        button.add_thietbi {
+            width: 80px;
+            color: #ff7506;
+            position: absolute;
+            top: 30%;
+            right: 0;
+            /* Orange/$-Orange-50 */
+            background: #fff2e7;
+            box-shadow: 0px 0px 6px #e7e9f2;
+            border-radius: 8px 0px 0px 8px;
+        }
+    }
+}

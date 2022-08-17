@@ -1,0 +1,72 @@
+
+
+.logo {
+    padding: 1rem;
+
+    img {
+        width: 100px;
+        height: 80px;
+    }
+
+    
+}
+
+.ant-menu.ant-menu-vertical{
+    min-height: 76vh;
+    .ant-menu-item{
+
+        .nav-link img{
+            margin-right: .5rem;
+        }
+        
+        &:hover{
+            background-color: #FF7506;
+            .nav-link{
+                color: white;
+            }
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+    .ant-menu-item-selected{
+        background-color: #FF7506;
+        .nav-link{
+            color: white;
+        }
+        img{
+            filter: brightness(0) invert(1);
+        }
+
+    }
+
+    
+}
+
+.logOut{
+    text-align: center;
+    button{
+        width: 176px;
+        height: 48px;
+        background-color: #ffecdd;
+        border:none;
+        border-radius: 8px;
+        text-align: left;
+        color: #FF7506;
+
+        img{
+            margin-right: .5rem ;
+        }
+    
+        &:hover{
+            background: #FF7506;
+            color: white;
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+
+   
+}

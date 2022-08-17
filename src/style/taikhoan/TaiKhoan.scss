@@ -1,0 +1,22 @@
+.accountContainer {
+    padding: 1rem 2rem;
+    position: relative;
+
+    .cardContainer {
+        padding: 2rem;
+        position: absolute;
+        top: 168px;
+        width: 1112px;
+        height: 397px;
+
+        /* White */
+
+        background: #ffffff;
+        box-shadow: 0px 2px 6px rgba(219, 219, 219, 0.5);
+        border-radius: 12px;
+
+        .ant-form.ant-form-vertical{
+            padding: 1rem;
+        }
+    }
+}

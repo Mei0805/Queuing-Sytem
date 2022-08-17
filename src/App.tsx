@@ -1,10 +1,11 @@
 import './App.scss';
-import Main from './component/routes';
+import 'antd/dist/antd.css';
+import Router from './component/routes';
 
 function App() {
   return (
     <div className="App">
-       <Main />
+       <Router />
     </div>
   );
 }

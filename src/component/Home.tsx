@@ -11,17 +11,12 @@ export const Home = () => {
 
   return (
     <Row className='mainLayout'>
-      <Col className='nav-col' span={4}>
-        <SideBar />
+      <Col className='nav-col-sidebar' span={3}>
+        <SideBar  />
       </Col>
 
-      <Col className='main-col' id='main' span={14}>
+      <Col className='main-col' id='main' span={21}>
         <Outlet/>
-
-      </Col>
-
-      <Col className='right-col' span={6}>
-        Info col
       </Col>
     </Row>
   )

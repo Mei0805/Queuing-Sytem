@@ -15,18 +15,40 @@ import { ForgotPass } from './DangNhap/ForgotPass';
 import { ResetPassword } from './DangNhap/ResetPassword';
 import { Home } from './Home';
 
+import { DashboardDay } from './DashBoard/DashboardDay';
+import { DashboardWeek } from './DashBoard/DashboardWeek';
+import { DashboardMonth } from './DashBoard/DashboardMonth';
 
-const Main = () => {
+//thietbi
+import { DSThietBi } from './ThietBi/DSThietBi';
+import { ThemThietBi } from './ThietBi/ThemthietBi';
+import { UpdateThietBi } from './ThietBi/UpdateThietBi';
+import { ChiTietThietBi } from './ThietBi/ChiTietThietBi';
+import { TaiKhoan } from './TaiKhoan/TaiKhoan';
+
+
+const Router = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />}>
+                <Route path='profile' element={<TaiKhoan />} />
                 <Route index element={<Dashboard />} />
-                <Route path='dashboard' element={<Dashboard />} />
-                <Route path='thietbi' element={<ThietBi />} />
+                <Route path='dashboard' element={<Dashboard />}>
+                    <Route index element={<DashboardDay />} />
+                    <Route path='dashboardWeek' element={<DashboardWeek />} />
+                    <Route path='dashboardMonth' element={<DashboardMonth />} />
+                </Route>
+                <Route path='thietbi' element={<ThietBi />} >
+                    <Route index element={<DSThietBi />} />
+                    <Route path='them' element={<ThemThietBi />} />
+                    <Route path=':id' element={<ChiTietThietBi />} />
+                    <Route path='capnhat/:id' element={<UpdateThietBi />} />
+                </Route>
                 <Route path='dichvu' element={<DichVu />} />
                 <Route path='capso' element={<CapSo />} />
                 <Route path='baocao' element={<BaoCao />} />
             </Route>
+
             <Route path='/dangnhap' element={<DangNhap />} />
             <Route path='/quenmatkhau' element={<ForgotPass />} />
             <Route path='/doimatkhau' element={<ResetPassword />} />
@@ -34,4 +56,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default Router;

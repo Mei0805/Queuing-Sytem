@@ -1,25 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
 
-*{
-    font-family: 'Nunito', sans-serif;
+* {
+    font-family: "Nunito", sans-serif;
 
-    h1{
-        font-size: 24px;
-        font-weight: 700;
+    h1 {
+        color: #ff7506 !important;
+        font-size: 24px !important;
+        line-height: 36px !important;
     }
-     
-    .left-navbar{
+
+    h2 {
+        color: #ff7506 !important;
+        font-weight: 700 !important;
+    }
+
+    .left-navbar {
         font-size: 16px;
         font-weight: 700;
     }
-    
 }
 
 //Home.tsx
-.mainLayout{
+.mainLayout {
     height: 100vh;
 }
-#main{
-    background-color: #F7F7F7;
+#main {
+    background-color: #f7f7f7;
 }
 
+//NotifyBtn n Profile
+#notifyContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    text-align: right;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    .iconContainer {
+        position: relative;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        padding: 5px;
+        background: #b3b6bc;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profileContainer {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+
+        .greeting {
+            text-align: left;
+        }
+    }
+    .cardNotify {
+        padding: 0;
+        z-index: 99;
+        position: absolute;
+        left: 0px;
+        top: 57px;
+
+        width: 360px;
+        height: 526px;
+
+        text-align: left;
+        background: #ffffff;
+        /* Pink shadow */
+        box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+        border-radius: 10px;
+
+        .ant-card-head {
+            height: 48px;
+            background: #ff9138;
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+            
+            .ant-card-head-title{
+                padding: 0;
+                line-height: 48px;
+            }
+        }
+        .ant-card-body{
+            padding: 0 2rem;
+        }
+        .cardContent {
+           
+            /* Gray/$-gray-100 */
+            border-bottom: 1.5px solid #d4d4d783;
+            padding-top: 1rem;
+
+            .user {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                color: #bf5805;
+            }
+            .time {
+                color: #535261;
+            }
+        }
+    }
+}
