@@ -24,14 +24,31 @@ import { DSThietBi } from './ThietBi/DSThietBi';
 import { ThemThietBi } from './ThietBi/ThemthietBi';
 import { UpdateThietBi } from './ThietBi/UpdateThietBi';
 import { ChiTietThietBi } from './ThietBi/ChiTietThietBi';
+import { TaiKhoanCaNhan } from './TaiKhoan/TaiKhoanCaNhan';
+import { DSDichVu } from './DichVu/DSDichVu';
+import { ThemDichVu } from './DichVu/ThemDichVu';
+import { ChiTietDichVu } from './DichVu/ChiTietDichVu';
+import { UpdateDichVu } from './DichVu/UpdateDichVu';
+import { DSCapSo } from './CapSo/DSCapSo';
+import { ThemCapSo } from './CapSo/ThemCapSo';
+import { ChiTietCapSo } from './CapSo/ChiTietCapSo';
+import { VaiTro } from './VaiTro/VaiTro';
+import { DSVaiTro } from './VaiTro/DSVaiTro';
+import { ThemVaiTro } from './VaiTro/ThemVaiTro';
+import { UpdateVaiTro } from './VaiTro/UpdateVaiTro';
 import { TaiKhoan } from './TaiKhoan/TaiKhoan';
+import { DSTaiKhoan } from './TaiKhoan/DSTaiKhoan';
+import { ThemTaiKhoan } from './TaiKhoan/ThemTaiKhoan';
+import { UpdateTaiKhoan } from './TaiKhoan/UpdateTaiKhoan';
+import { NguoiDung } from './NhatKyUser/NguoiDung';
 
 
 const Router = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />}>
-                <Route path='profile' element={<TaiKhoan />} />
+            <Route index element={<Dashboard />} />
+                <Route path='profile' element={<TaiKhoanCaNhan />} />
                 <Route index element={<Dashboard />} />
                 <Route path='dashboard' element={<Dashboard />}>
                     <Route index element={<DashboardDay />} />
@@ -41,12 +58,33 @@ const Router = () => {
                 <Route path='thietbi' element={<ThietBi />} >
                     <Route index element={<DSThietBi />} />
                     <Route path='them' element={<ThemThietBi />} />
-                    <Route path=':id' element={<ChiTietThietBi />} />
+                    <Route path='chitiet/:id' element={<ChiTietThietBi />} />
                     <Route path='capnhat/:id' element={<UpdateThietBi />} />
                 </Route>
-                <Route path='dichvu' element={<DichVu />} />
-                <Route path='capso' element={<CapSo />} />
+                <Route path='dichvu' element={<DichVu />} >
+                    <Route index element={<DSDichVu />} />
+                    <Route path='them' element={<ThemDichVu />} />
+                    <Route path='chitiet/:id' element={<ChiTietDichVu />} />
+                    <Route path='capnhat/:id' element={<UpdateDichVu />} />
+                </Route>
+                <Route path='capso' element={<CapSo />} >
+                    <Route index element={<DSCapSo />} />
+                    <Route path='chitiet/:id' element={<ChiTietCapSo />} />
+                    <Route path='them' element={<ThemCapSo />} />
+                </Route>
                 <Route path='baocao' element={<BaoCao />} />
+                <Route path='vaitro' element={<VaiTro />} >
+                    <Route index element={<DSVaiTro />} />
+                    <Route path='them' element={<ThemVaiTro />} />
+                    <Route path='capnhat/:id' element={<UpdateVaiTro />} />
+                </Route>
+                <Route path='taikhoan' element={<TaiKhoan />} >
+                    <Route index element={<DSTaiKhoan />} />
+                    <Route path='them' element={<ThemTaiKhoan />} />
+                    <Route path='capnhat/:id' element={<UpdateTaiKhoan />} />
+                </Route>
+                <Route path='nguoidung' element={<NguoiDung />} />
+                
             </Route>
 
             <Route path='/dangnhap' element={<DangNhap />} />

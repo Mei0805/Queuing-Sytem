@@ -1,8 +1,7 @@
-.thietbiContainer {
+.capsoContainer {
     padding: 1rem 2rem;
-    
 
-    .thietBiListContainer {
+    .capSoListContainer {
         .ant-input-search {
             &:hover {
                 outline: none;
@@ -10,7 +9,7 @@
             button {
                 border-left: none;
                 background: white;
-                &:hover{
+                &:hover {
                     background: none;
                 }
 
@@ -22,7 +21,7 @@
         .tableContainer {
             justify-content: space-between;
 
-            .thietbiTable {
+            .capsoTable {
                 .ant-table-thead {
                     tr {
                         padding: 1rem 17px;
@@ -43,25 +42,19 @@
                     }
                 }
 
-                .textDichvu{
-                    .contentDichVu{
+                .textDichvu {
+                    .contentDichVu {
                         margin: 0;
-                        display:-webkit-box;
+                        display: -webkit-box;
                         -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;  
+                        -webkit-box-orient: vertical;
                         overflow: hidden;
-                    }
-                    
-                    .more{
-                        &:focus + .contentDichVu {
-                            display: block !important;
-                        }
                     }
                 }
             }
         }
 
-        button.add_thietbi {
+        button.add_capSo {
             width: 80px;
             color: #ff7506;
             position: absolute;
@@ -74,51 +67,43 @@
         }
     }
 
-    .themThietbiContainer {
+    .themCapSoContainer {
         .formThemContainer {
+            height: 580px;
+            text-align: center;
             padding: 1rem;
             background: #ffffff;
             /* Shadowbox */
 
             box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
             border-radius: 16px;
-            input {
-                &:focus {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a;
-                    box-shadow: 0 0 .5px #ffac6a;
-                }
-                &:hover {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a;
-                }
-            }
-            .ant-select-selector,
-            .ant-select-show{
-                &:focus {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                    box-shadow: 0 0 .5px #ffac6a !important;
-                }
-                &:hover {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                }
-            }
-            .dichvuSelect .ant-select-selection-item {
-                color: white;
-                background: #ffac6a;
-                /* down */
+            align-content: flex-start;
 
-                box-shadow: 0px 0px 6px #e7e9f2;
-                border-radius: 9px;
-                svg {
-                    color: white;
-                }
+            h5.capsoTitle {
+                margin: 1rem 0;
+                color: #ff7506;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 48px;
+                height: 50px;
+                text-transform: uppercase;
+            }
+
+            .chonDichvu {
+                margin: 2rem 0;
+            }
+
+            .ant-select {
+                text-align: left;
             }
         }
 
         .btnGroup {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            gap: 10px;
             button {
                 width: 147px;
                 box-shadow: 0px 0px 6px #e7e9f2;
@@ -140,6 +125,27 @@
                     &:hover {
                         opacity: 1;
                     }
+                }
+            }
+        }
+    }
+
+    .detailCapSoContainer {
+        .thongtinContainer {
+            height: 80vh;
+            padding: 1rem;
+            background: #ffffff;
+            /* Shadowbox */
+
+            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+            border-radius: 16px;
+
+            .infoField {
+                margin-bottom: 1rem;
+                .tittleInfo {
+                    display: inline-block;
+                    width: 150px;
+                    font-weight: bold;
                 }
             }
         }
@@ -180,50 +186,79 @@
                 }
             }
         }
-        
-        .ant-select-selector,
-            .ant-select-show{
-                &:focus {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                    box-shadow: 0 0 .5px #ffac6a !important;
-                }
-                &:hover {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                }
-            }
-            .dichvuSelect .ant-select-selection-item {
-                color: white;
-                background: #ffac6a;
-                /* down */
 
-                box-shadow: 0px 0px 6px #e7e9f2;
-                border-radius: 9px;
-                svg {
-                    color: white;
-                }
+        .ant-select-selector,
+        .ant-select-show {
+            &:focus {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
+                box-shadow: 0 0 0.5px #ffac6a !important;
             }
+            &:hover {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
+            }
+        }
+        .dichvuSelect .ant-select-selection-item {
+            color: white;
+            background: #ffac6a;
+            /* down */
+
+            box-shadow: 0px 0px 6px #e7e9f2;
+            border-radius: 9px;
+            svg {
+                color: white;
+            }
+        }
     }
 
-    .detailThietbiContainer {
-        .thongtinContainer {
-            height: 80vh;
-            padding: 1rem;
-            background: #ffffff;
-            /* Shadowbox */
+    
+}
 
-            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
-            border-radius: 16px;
+.popUpInfo {
+    .ant-modal-content {
+        border-radius: 24px;
+        .ant-modal-header {
+            border-radius: 24px 24px 0 0 ;
+            .ant-modal-title {
+                padding: 2rem 1rem 0 1rem;
+                text-align: center;
+                h3 {
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 48px;
+                }
 
-            .infoField {
-                margin-bottom: 1rem;
-                .tittleInfo {
-                    display: inline-block;
-                    width: 150px;
-                    font-weight: bold;
+                .popupNumber {
+                    color: #ff7506;
+                    font-weight: 800;
+                    font-size: 56px;
+                    line-height: 60px;
+                    padding: 0;
+                    margin-bottom: 15px;
+                }
+
+                .popupInfo {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 27px;
                 }
             }
         }
+        .ant-modal-body {
+            background: #ff9138;
+            color: white;
+            border-radius: 0 0 24px 24px;
+            p{
+                text-align: center;
+                font-weight: 700;
+font-size: 22px;
+line-height: 33px;
+            }
+        }
+        .ant-modal-footer{
+            display: none;
+        }
+        
     }
 }

@@ -1,8 +1,7 @@
-.thietbiContainer {
+.vaitroContainer {
     padding: 1rem 2rem;
-    
 
-    .thietBiListContainer {
+    .vaiTroListContainer {
         .ant-input-search {
             &:hover {
                 outline: none;
@@ -10,7 +9,7 @@
             button {
                 border-left: none;
                 background: white;
-                &:hover{
+                &:hover {
                     background: none;
                 }
 
@@ -22,7 +21,7 @@
         .tableContainer {
             justify-content: space-between;
 
-            .thietbiTable {
+            .vaitroTable {
                 .ant-table-thead {
                     tr {
                         padding: 1rem 17px;
@@ -41,40 +40,38 @@
                     tr:nth-child(2n) {
                         background: #fff2e7;
                     }
+                    tr:hover {
+                        cursor: pointer;
+                    }
                 }
 
-                .textDichvu{
-                    .contentDichVu{
+                .textDichvu {
+                    .contentDichVu {
                         margin: 0;
-                        display:-webkit-box;
+                        display: -webkit-box;
                         -webkit-line-clamp: 1;
-                        -webkit-box-orient: vertical;  
+                        -webkit-box-orient: vertical;
                         overflow: hidden;
-                    }
-                    
-                    .more{
-                        &:focus + .contentDichVu {
-                            display: block !important;
-                        }
                     }
                 }
             }
         }
 
-        button.add_thietbi {
+        button.add_vaitro {
             width: 80px;
             color: #ff7506;
             position: absolute;
-            top: 30%;
+            top: 33%;
             right: 0;
             /* Orange/$-Orange-50 */
             background: #fff2e7;
+            border-color: #fff2e7;
             box-shadow: 0px 0px 6px #e7e9f2;
             border-radius: 8px 0px 0px 8px;
         }
     }
 
-    .themThietbiContainer {
+    .themVaiTroContainer {
         .formThemContainer {
             padding: 1rem;
             background: #ffffff;
@@ -86,7 +83,7 @@
                 &:focus {
                     outline: #ffac6a !important;
                     border-color: #ffac6a;
-                    box-shadow: 0 0 .5px #ffac6a;
+                    box-shadow: 0 0 0.5px #ffac6a;
                 }
                 &:hover {
                     outline: #ffac6a !important;
@@ -94,27 +91,42 @@
                 }
             }
             .ant-select-selector,
-            .ant-select-show{
+            .ant-select-show {
                 &:focus {
                     outline: #ffac6a !important;
                     border-color: #ffac6a !important;
-                    box-shadow: 0 0 .5px #ffac6a !important;
+                    box-shadow: 0 0 0.5px #ffac6a !important;
                 }
                 &:hover {
                     outline: #ffac6a !important;
                     border-color: #ffac6a !important;
                 }
             }
-            .dichvuSelect .ant-select-selection-item {
-                color: white;
-                background: #ffac6a;
-                /* down */
 
-                box-shadow: 0px 0px 6px #e7e9f2;
-                border-radius: 9px;
-                svg {
-                    color: white;
+            .checkboxPhanQuyen {
+                .ant-checkbox-wrapper {
+                    width: 100%;
+                    padding: 0;
+                    margin: 5px 0;
+
+                    .ant-checkbox-inner {
+                        border-color: #4277ff;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 4px;
+                    }
+                    span span.content {
+                        text-align: left;
+                        display: inline-block;
+                        width: 150px;
+                    }
                 }
+            }
+
+            .phanquyenChucNang {
+                padding: 1rem;
+                background: #fff2e7;
+                border-radius: 8px;
             }
         }
 
@@ -145,7 +157,7 @@
         }
     }
 
-    .updateThietbiContainer {
+    .updateVaiTroContainer {
         .formUpdateContainer {
             padding: 1rem;
             background: #ffffff;
@@ -160,7 +172,7 @@
                 width: 147px;
                 box-shadow: 0px 0px 6px #e7e9f2;
                 border-radius: 8px;
-                &.addBtn {
+                &.updateBtn {
                     background: #ff9138;
                     border: none;
                     opacity: 0.9;
@@ -180,50 +192,43 @@
                 }
             }
         }
-        
+
         .ant-select-selector,
-            .ant-select-show{
-                &:focus {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                    box-shadow: 0 0 .5px #ffac6a !important;
-                }
-                &:hover {
-                    outline: #ffac6a !important;
-                    border-color: #ffac6a !important;
-                }
+        .ant-select-show {
+            &:focus {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
+                box-shadow: 0 0 0.5px #ffac6a !important;
             }
-            .dichvuSelect .ant-select-selection-item {
-                color: white;
-                background: #ffac6a;
-                /* down */
-
-                box-shadow: 0px 0px 6px #e7e9f2;
-                border-radius: 9px;
-                svg {
-                    color: white;
-                }
+            &:hover {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
             }
-    }
+        }
+        .checkboxPhanQuyen {
+            .ant-checkbox-wrapper {
+                width: 100%;
+                padding: 0;
+                margin: 5px 0;
 
-    .detailThietbiContainer {
-        .thongtinContainer {
-            height: 80vh;
-            padding: 1rem;
-            background: #ffffff;
-            /* Shadowbox */
-
-            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
-            border-radius: 16px;
-
-            .infoField {
-                margin-bottom: 1rem;
-                .tittleInfo {
+                .ant-checkbox-inner {
+                    border-color: #4277ff;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 4px;
+                }
+                span span.content {
+                    text-align: left;
                     display: inline-block;
                     width: 150px;
-                    font-weight: bold;
                 }
             }
+        }
+
+        .phanquyenChucNang {
+            padding: 1rem;
+            background: #fff2e7;
+            border-radius: 8px;
         }
     }
 }

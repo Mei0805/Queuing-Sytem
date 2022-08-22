@@ -1,22 +1,284 @@
-.accountContainer {
+.taikhoanContainer {
     padding: 1rem 2rem;
-    position: relative;
 
-    .cardContainer {
-        padding: 2rem;
-        position: absolute;
-        top: 168px;
-        width: 1112px;
-        height: 397px;
+    .taiKhoanListContainer {
+        .ant-input-search {
+            &:hover {
+                outline: none;
+            }
+            button {
+                border-left: none;
+                background: white;
+                &:hover {
+                    background: none;
+                }
 
-        /* White */
+                .anticon {
+                    color: #ff7506;
+                }
+            }
+        }
+        .tableContainer {
+            justify-content: space-between;
 
-        background: #ffffff;
-        box-shadow: 0px 2px 6px rgba(219, 219, 219, 0.5);
-        border-radius: 12px;
+            .taiKhoanTable {
+                .ant-table-thead {
+                    tr {
+                        padding: 1rem 17px;
+                        th {
+                            text-align: center;
+                            /* Orange/$-Orange-400 */
+                            background: #ff9138;
+                            color: white;
+                        }
+                    }
+                }
+                .ant-table-tbody {
+                    tr:nth-child(1n) {
+                        background: #ffffff;
+                    }
+                    tr:nth-child(2n) {
+                        background: #fff2e7;
+                    }
+                }
 
-        .ant-form.ant-form-vertical{
+            }
+        }
+
+        button.add_dichvu {
+            width: 80px;
+            color: #ff7506;
+            position: absolute;
+            top: 30%;
+            right: 0;
+            /* Orange/$-Orange-50 */
+            background: #fff2e7;
+            box-shadow: 0px 0px 6px #e7e9f2;
+            border-radius: 8px 0px 0px 8px;
+        }
+    }
+
+    .themThietbiContainer {
+        .formThemContainer {
             padding: 1rem;
+            background: #ffffff;
+            /* Shadowbox */
+
+            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+            border-radius: 16px;
+            input {
+                &:focus {
+                    outline: #ffac6a !important;
+                    border-color: #ffac6a;
+                    box-shadow: 0 0 0.5px #ffac6a;
+                }
+                &:hover {
+                    outline: #ffac6a !important;
+                    border-color: #ffac6a;
+                }
+            }
+            .ant-select-selector,
+            .ant-select-show {
+                &:focus {
+                    outline: #ffac6a !important;
+                    border-color: #ffac6a !important;
+                    box-shadow: 0 0 0.5px #ffac6a !important;
+                }
+                &:hover {
+                    outline: #ffac6a !important;
+                    border-color: #ffac6a !important;
+                }
+            }
+            .dichvuSelect .ant-select-selection-item {
+                color: white;
+                background: #ffac6a;
+                /* down */
+
+                box-shadow: 0px 0px 6px #e7e9f2;
+                border-radius: 9px;
+                svg {
+                    color: white;
+                }
+            }
+
+            .checkboxCapSo {
+                .ant-checkbox-wrapper {
+                    width: 100%;
+                    padding: 0;
+                    margin: 5px 0;
+
+                    .ant-checkbox-inner {
+                        border-color: #4277ff;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 4px;
+                    }
+                    span span.content {
+                        text-align: left;
+                        display: inline-block;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+
+        .btnGroup {
+            button {
+                width: 147px;
+                box-shadow: 0px 0px 6px #e7e9f2;
+                border-radius: 8px;
+                &.addBtn {
+                    background: #ff9138;
+                    border: none;
+                    opacity: 0.9;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                &.resetBtn {
+                    background: #fff2e7;
+                    color: #ff7506;
+                    border-color: #ff7506;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .updateThietbiContainer {
+        .formUpdateContainer {
+            padding: 1rem;
+            background: #ffffff;
+            /* Shadowbox */
+
+            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+            border-radius: 16px;
+        }
+
+        .btnGroup {
+            button {
+                width: 147px;
+                box-shadow: 0px 0px 6px #e7e9f2;
+                border-radius: 8px;
+                &.addBtn {
+                    background: #ff9138;
+                    border: none;
+                    opacity: 0.9;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                &.resetBtn {
+                    background: #fff2e7;
+                    color: #ff7506;
+                    border-color: #ff7506;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .ant-select-selector,
+        .ant-select-show {
+            &:focus {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
+                box-shadow: 0 0 0.5px #ffac6a !important;
+            }
+            &:hover {
+                outline: #ffac6a !important;
+                border-color: #ffac6a !important;
+            }
+        }
+        .dichvuSelect .ant-select-selection-item {
+            color: white;
+            background: #ffac6a;
+            /* down */
+
+            box-shadow: 0px 0px 6px #e7e9f2;
+            border-radius: 9px;
+            svg {
+                color: white;
+            }
+        }
+    }
+
+    .detailDichVuContainer {
+        .thongtinContainer {
+            height: 80vh;
+
+            .thongtin {
+                margin-right: 1rem;
+                padding: 1rem;
+                background: white;
+                box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+                border-radius: 16px;
+            }
+
+            .bangThongTin {
+                padding: 1rem;
+                background: white;
+                box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+                border-radius: 16px;
+            }
+
+            .infoField {
+                margin-bottom: 1rem;
+                .tittleInfo {
+                    display: inline-block;
+                    width: 100px;
+                    font-weight: bold;
+                }
+            }
+
+            .thietbiTable {
+                border-radius: 32px 32px 0 0;
+                thead {
+                    tr {
+                        th {
+                            background: #ff9138;
+                            color: white;
+                        }
+                    }
+                }
+                tbody {
+                    tr:nth-child(1n) {
+                        background: #ffffff;
+                    }
+                    tr:nth-child(2n) {
+                        background: #fff2e7;
+                    }
+                }
+            }
+        }
+        .btn-group {
+            background: #fff2e7;
+            padding: 0 5px;
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+
+            position: absolute;
+            top: 20%;
+            right: 0;
+
+            border-radius: 8px 0px 0px 8px;
+
+            button {
+                background: #fff2e7;
+                color: #ff7506;
+                border: none;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 19px;
+            }
         }
     }
 }

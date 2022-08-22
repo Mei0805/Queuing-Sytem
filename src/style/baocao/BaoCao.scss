@@ -1,0 +1,34 @@
+.baocaoContainer{
+    padding: 1rem 2rem;
+
+    .ant-table-content{
+        margin: 1rem 0;
+        .ant-table-thead{
+            tr {
+                padding: 1rem 17px;
+                th {
+                    text-align: center;
+                    /* Orange/$-Orange-400 */
+                    background: #ff9138;
+                    color: white;
+                    svg{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    button.download {
+        width: 80px;
+        color: #ff7506;
+        position: absolute;
+        top: 30%;
+        right: 0;
+        /* Orange/$-Orange-50 */
+        background: #fff2e7;
+        box-shadow: 0px 0px 6px #e7e9f2;
+        border-radius: 8px 0px 0px 8px;
+    }
+}
+

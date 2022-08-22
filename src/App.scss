@@ -45,11 +45,17 @@
         height: 32px;
         border-radius: 50%;
         padding: 5px;
-        background: #b3b6bc;
+        background: #FFF2E7;
 
         display: flex;
         justify-content: center;
         align-items: center;
+        &.active{
+            background: #FF7506;
+            img{
+                filter: brightness(50);
+            }
+        }
     }
     .profileContainer {
         display: flex;

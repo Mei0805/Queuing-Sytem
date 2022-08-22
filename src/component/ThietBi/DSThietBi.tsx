@@ -1,16 +1,143 @@
+import { useState,Fragment } from "react";
 import { Row, Col, Button, Table } from "antd"
 import { Select, Form, Input } from "antd"
 import { SearchOutlined } from '@ant-design/icons';
 
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;
-const { Search } = Input;
-const onSearch = (value: string) => console.log(value);
 
 export const DSThietBi = () => {
+    const [showContent,setShowContent] = useState(false);
     const navigate = useNavigate();
+    const thietbi = [
+        {
+            "id": 1,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 1,
+            "trangThaiKN": 0,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 2,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 1,
+            "trangThaiKN": 1,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 3,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 0,
+            "trangThaiKN": 1,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 4,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 0,
+            "trangThaiKN": 0,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 5,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 1,
+            "trangThaiKN": 0,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 6,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 0,
+            "trangThaiKN": 1,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 7,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 0,
+            "trangThaiKN": 1,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 8,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 1,
+            "trangThaiKN": 1,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 9,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 1,
+            "trangThaiKN": 0,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        },
+        {
+            "id": 10,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "diaChi": "192.168.1.10",
+            "trangThaiHD": 0,
+            "trangThaiKN": 0,
+            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
+        }
+    ]
+    const [listThietbi, setListThietbi] = useState(thietbi);
+    
+    const handleChangeHoatdong = (value: string |number) =>{
+        console.log(value);
+        let data:any = [];
+        switch(value){
+            case 'all':
+                data= thietbi;
+                break;
+            case 1:
+                data = thietbi.filter((item)=> item.trangThaiHD == 1);
+                break;
+            case 2:
+                data = thietbi.filter((item)=> item.trangThaiHD == 0);
+                break;
+        }
+        setListThietbi(data)
+    }
+    const handleChangeConnect = (value: string |number) =>{
+        console.log(value);
+        let data:any = [];
+        switch(value){
+            case 'all':
+                data= thietbi;
+                break;
+            case 1:
+                data = thietbi.filter((item)=> item.trangThaiKN == 1);
+                break;
+            case 2:
+                data = thietbi.filter((item)=> item.trangThaiKN == 0);
+                break;
+        }
+        setListThietbi(data)
+    }
+    
+
     const columns = [
 
         {
@@ -32,11 +159,11 @@ export const DSThietBi = () => {
             title: 'Trạng thái hoạt động',
             dataIndex: 'trangThaiHD',
             width: 171,
-            render: (dataIndex:number) => {
+            render: (dataIndex: number) => {
 
                 if (dataIndex == 1) {
                     return <div className='d-flex align-items-center' style={{ fontSize: '14px' }}>
-                        <img src='/img/icon/active.png' alt='arrowImg'style={{ paddingRight: '14px' }} />
+                        <img src='/img/icon/active.png' alt='arrowImg' style={{ paddingRight: '14px' }} />
                         Hoạt động
                     </div>
                 }
@@ -54,11 +181,11 @@ export const DSThietBi = () => {
             title: 'Trạng thái kết nối',
             dataIndex: 'trangThaiKN',
             width: 145,
-            render: (dataIndex:number) => {
+            render: (dataIndex: number) => {
 
                 if (dataIndex == 1) {
                     return <div className='d-flex align-items-center' style={{ fontSize: '14px' }}>
-                        <img src='/img/icon/active.png' alt='arrowImg'style={{ paddingRight: '14px' }} />
+                        <img src='/img/icon/active.png' alt='arrowImg' style={{ paddingRight: '14px' }} />
                         Kết nối
                     </div>
                 }
@@ -76,18 +203,12 @@ export const DSThietBi = () => {
             title: 'Dịch vụ sử dụng',
             dataIndex: 'dichVu',
             width: 268,
-
-        },
-        {
-            title: ' ',
-            dataIndex: 'id',
             render: (dataIndex: any) => {
                 return (
-                    <button onClick={() => {
-                        navigate(`/thietbi/chiTietThietBi/${dataIndex}`);
-                    }}>
-                        Chi tiết
-                    </button>
+                    <div className="textDichvu">
+                        <p className="contentDichVu">{dataIndex}</p>
+                        <a className="more" >Xem thêm</a>
+                    </div>
                 )
             }
         },
@@ -96,135 +217,66 @@ export const DSThietBi = () => {
             dataIndex: 'id',
             render: (dataIndex: any) => {
                 return (
-                    <button onClick={() => {
-                        navigate(`/thietbi/capNhatThietBi/${dataIndex}`);
-                    }}>
-                        Cập nhật
-                    </button>
+                    <div style={{ textAlign: 'center' }}>
+                        <Button type="link" onClick={() => { navigate(`/thietbi/chitiet/${dataIndex}`); }}>
+                            Chi tiết
+                        </Button>
+                    </div>
+                )
+            }
+        },
+        {
+            title: ' ',
+            dataIndex: 'id',
+            render: (dataIndex: any) => {
+                return (
+                    <div style={{ textAlign: 'center' }}>
+                        <Button type="link" onClick={() => { navigate(`/thietbi/capnhat/${dataIndex}`); }}>
+                            Cập nhật
+                        </Button>
+                    </div>
                 )
             }
         }
 
     ];
 
-    const thietbi = [
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 1,
-            "trangThaiKN": 0,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 1,
-            "trangThaiKN": 1,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 0,
-            "trangThaiKN": 1,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 0,
-            "trangThaiKN": 0,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 1,
-            "trangThaiKN": 0,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 0,
-            "trangThaiKN": 1,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 0,
-            "trangThaiKN": 1,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 1,
-            "trangThaiKN": 1,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 1,
-            "trangThaiKN": 0,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        },
-        {
-            "maThietBi": "KIO_01",
-            "tenThietBi": "Kiosk",
-            "diaChi": "192.168.1.10",
-            "trangThaiHD": 0,
-            "trangThaiKN": 0,
-            "dichVu": "Khám tim mạch, khám mắt, khám tai mũi họng"
-        }
-    ]
-
     function itemRender(current: any, type: any, originalElement: any) {
         if (type === 'prev') {
-            return <a><img src='/img/icon/arrow.png' alt='arrowImg' /></a>;
+            return <a><img src='/img/icon/left_pagination.png' alt='arrowImg' /></a>;
         } else if (type === 'next') {
-            return <a><img src='/img/icon/arrow.png' alt='arrowImg' /></a>;
+            return <a><img src='/img/icon/right_pagination.png' alt='arrowImg' /></a>;
         }
         return originalElement;
     }
+
+
     return (
         <div className="thietBiListContainer" style={{ width: '100%' }}>
             <h1>Danh sách thiết bị</h1>
             <Row>
                 <Col span='12'>
                     <Form layout="vertical" autoComplete="off">
-                        <Form.Item style={{ width: '40%', display: 'inline-block', marginInlineEnd: '1rem' }} label="Trạng thái hoạt động" >
-                            <Select defaultValue="all" suffixIcon={<img src='/img/icon/arrow.png' alt='arrowImg' />}>
-                                <Option value="all">Tất cả</Option>
-                                <Option value="active">Hoạt động</Option>
-                                <Option value="deactive">Ngưng hoạt động</Option>
+                        <Form.Item style={{ width: '40%',fontWeight:'bold', display: 'inline-block', marginInlineEnd: '1rem' }} label="Trạng thái hoạt động" >
+                            <Select defaultValue="all" onChange={handleChangeHoatdong} suffixIcon={<img src='/img/icon/arrow.png' alt='arrowImg' />}>
+                                <Option value="all"    >Tất cả</Option>
+                                <Option value={1} >Hoạt động</Option>
+                                <Option value={2}> Ngưng hoạt động</Option>
                             </Select>
                         </Form.Item>
 
-                        <Form.Item style={{ width: '40%', display: 'inline-block' }} label="Trạng thái kết nối" >
-                            <Select defaultValue="all" suffixIcon={<img src='/img/icon/arrow.png' alt='arrowImg' />}>
+                        <Form.Item style={{ width: '40%',fontWeight:'bold', display: 'inline-block' }} label="Trạng thái kết nối" >
+                            <Select defaultValue="all" onChange={handleChangeConnect} suffixIcon={<img src='/img/icon/arrow.png' alt='arrowImg' />}>
                                 <Option value="all">Tất cả</Option>
-                                <Option value="connect">Kết nối</Option>
-                                <Option value="disconnect">Mất kết nối</Option>
+                                <Option value={1}>Kết nối</Option>
+                                <Option value={2}>Mất kết nối</Option>
                             </Select>
                         </Form.Item>
                     </Form>
                 </Col>
-                <Col span='12'>
+                <Col span='11' style={{textAlign:'right'}}>
                     <Form layout="vertical" style={{}} autoComplete="off">
-
-                        <Form.Item style={{ width: '40%', display: 'inline-block' }} label="Từ khóa" >
+                        <Form.Item style={{ width: '40%',fontWeight:'bold', display: 'inline-block' }} label="Từ khóa" >
                             <Input placeholder="Nhập từ khóa..." size="small" suffix={<Button type="text"><SearchOutlined size={14} style={{ color: '#FF9138' }} /></Button>} />
                         </Form.Item>
                     </Form>
@@ -234,10 +286,10 @@ export const DSThietBi = () => {
                 <Col span={23}>
                     <Table
                         className="thietbiTable"
-                        dataSource={thietbi}
+                        dataSource={listThietbi}
                         columns={columns}
                         size="small"
-                        pagination={{ pageSize: 7, itemRender: itemRender }}
+                        pagination={{ pageSize: 6, itemRender: itemRender }}
                         bordered
                     >
                     </Table>
