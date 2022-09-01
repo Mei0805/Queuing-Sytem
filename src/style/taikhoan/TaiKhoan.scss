@@ -40,8 +40,12 @@
                     tr:nth-child(2n) {
                         background: #fff2e7;
                     }
+                    tr {
+                        td {
+                            text-align: center;
+                        }
+                    }
                 }
-
             }
         }
 
@@ -58,7 +62,7 @@
         }
     }
 
-    .themThietbiContainer {
+    .themTaikhoanContainer {
         .formThemContainer {
             padding: 1rem;
             background: #ffffff;
@@ -101,28 +105,10 @@
                 }
             }
 
-            .checkboxCapSo {
-                .ant-checkbox-wrapper {
-                    width: 100%;
-                    padding: 0;
-                    margin: 5px 0;
-
-                    .ant-checkbox-inner {
-                        border-color: #4277ff;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 4px;
-                    }
-                    span span.content {
-                        text-align: left;
-                        display: inline-block;
-                        width: 150px;
-                    }
-                }
-            }
         }
 
         .btnGroup {
+            padding-top: 1rem;
             button {
                 width: 147px;
                 box-shadow: 0px 0px 6px #e7e9f2;
@@ -149,17 +135,21 @@
         }
     }
 
-    .updateThietbiContainer {
+    .updateTaiKhoanContainer {
         .formUpdateContainer {
-            padding: 1rem;
-            background: #ffffff;
-            /* Shadowbox */
+            .infoField {
+                padding: 1rem;
+                
+                background: #ffffff;
+                /* Shadowbox */
 
-            box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
-            border-radius: 16px;
+                box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+                border-radius: 16px;
+            }
         }
 
         .btnGroup {
+            padding-top: 1rem;
             button {
                 width: 147px;
                 box-shadow: 0px 0px 6px #e7e9f2;

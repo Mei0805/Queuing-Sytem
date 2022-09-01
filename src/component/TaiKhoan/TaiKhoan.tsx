@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { Outlet } from 'react-router-dom';
 import { Col, Row } from 'antd';
 import '../../style/taikhoan/TaiKhoan.scss'
@@ -7,9 +7,12 @@ import { NotifyBtn } from '../DashBoard/NotifyBtn';
 import { CardNotify } from '../CardNotify';
 import { Profile } from '../Profile';
 
-
 export const TaiKhoan = () => {
     const [statusNotify, setStatusNotify] = useState<boolean>(false);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [])
     return (
         <div className='taikhoanContainer'>
             <Row>

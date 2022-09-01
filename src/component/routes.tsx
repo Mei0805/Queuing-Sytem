@@ -47,9 +47,11 @@ const Router = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />}>
-            <Route index element={<Dashboard />} />
+                <Route path='/' element={<Dashboard />} >
+                    <Route index element={<DashboardDay />} />
+                </Route>
+
                 <Route path='profile' element={<TaiKhoanCaNhan />} />
-                <Route index element={<Dashboard />} />
                 <Route path='dashboard' element={<Dashboard />}>
                     <Route index element={<DashboardDay />} />
                     <Route path='dashboardWeek' element={<DashboardWeek />} />
@@ -84,12 +86,11 @@ const Router = () => {
                     <Route path='capnhat/:id' element={<UpdateTaiKhoan />} />
                 </Route>
                 <Route path='nguoidung' element={<NguoiDung />} />
-                
             </Route>
 
             <Route path='/dangnhap' element={<DangNhap />} />
             <Route path='/quenmatkhau' element={<ForgotPass />} />
-            <Route path='/doimatkhau' element={<ResetPassword />} />
+            <Route path='/doimatkhau/:id' element={<ResetPassword />} />
         </Routes >
     )
 }

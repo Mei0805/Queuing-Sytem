@@ -1,20 +1,43 @@
-
-import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './DangNhap.scss'
+import React, { useState, useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
-import { Button, Form, Input } from 'antd';
+import { useDispatch, useSelector } from "react-redux";
+import { taikhoanCreator } from '../../redux';
+import { bindActionCreators } from "redux";
+import { State } from "../../redux/reducers";
+
+import { Button, Form, Input,message } from 'antd';
 import { Col, Row } from 'antd';
 
 export const DangNhap = () => {
+    let dispatch = useDispatch();
+    const [taiKhoan, setListTaiKhoan] = useState();
+    const { actionLoadTaiKhoan, DangNhap } = bindActionCreators(taikhoanCreator, dispatch);
+    const { logedInStatus } = useSelector((state: State) => state.taikhoan);
 
-    const onFinish = (values: any) => {
-        console.log('Success:', values);
+    const onFinish = (e: any) => {
+        // e.preventDefault();
+        console.log('Success:',e.username, e.password);
+        DangNhap(e.username, e.password)
     };
 
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        actionLoadTaiKhoan();
+    }, [])
+    useEffect(() => {
+        if (logedInStatus === true) {
+            window.location.replace('/dashboard');
+        } else {
+            
+        }
+    }, [logedInStatus])
+
     return (
         <Row className='login' id='loginPage'>
             <Col className='left-login' span={10}>
@@ -51,12 +74,9 @@ export const DangNhap = () => {
                     </NavLink>
 
                     <Form.Item style={{ textAlign: 'center', marginTop: '10px' }}>
-                    <NavLink to='/dashboard' >
-                    <Button className='loginBtn' size={'large'}>
+                        <Button className='loginBtn' htmlType="submit" size={'large'}>
                             Đăng nhập
                         </Button>
-                    </NavLink>
-                       
                     </Form.Item>
                 </Form>
 

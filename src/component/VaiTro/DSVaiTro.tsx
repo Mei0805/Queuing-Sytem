@@ -87,6 +87,18 @@ export const DSVaiTro = () => {
         }
 
     ];
+    const handleSearch = (e: any) => {
+        let keySearch = e.target.value;
+        console.log(keySearch);
+        console.log(keySearch.length);
+        let data: any = [];
+        if (keySearch.length >= 0) {
+            data = vaitro.filter((item: any) => {
+                return item.tenVaiTro.toLowerCase().match(keySearch) || item.tenVaiTro.match(keySearch)
+            })
+            setListVaiTro(data)
+        }
+    }
 
     function itemRender(current: any, type: any, originalElement: any) {
         if (type === 'prev') {
@@ -105,7 +117,9 @@ export const DSVaiTro = () => {
                 <Col span={23} style={{ display:'flex',justifyContent: 'flex-end' }}>
                     <Form layout="vertical" style={{ width: '240px' }} autoComplete="off">
                         <Form.Item style={{ fontWeight: 'bold', display: 'inline-block' }} label="Từ khóa" >
-                            <Input placeholder="Nhập từ khóa..." size="small" suffix={<Button type="text"><SearchOutlined size={14} style={{ color: '#FF9138' }} /></Button>} />
+                            <Input placeholder="Nhập từ khóa..." 
+                            onChange={(e) => handleSearch(e) }
+                            size="small" suffix={<Button type="text"><SearchOutlined size={14} style={{ color: '#FF9138' }} /></Button>} />
                         </Form.Item>
                     </Form>
                 </Col>

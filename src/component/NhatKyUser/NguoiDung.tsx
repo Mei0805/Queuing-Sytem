@@ -1,15 +1,21 @@
 import '../../style/baocao/BaoCao.scss'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { Col, Row, Table, Button, DatePicker } from 'antd';
+import { Col, Row, Table, DatePicker } from 'antd';
 
 import { Profile } from '../../component/Profile';
 import { NotifyBtn } from '../../component/DashBoard/NotifyBtn';
 import { CardNotify } from '../../component/CardNotify';
 
+import { bindActionCreators } from "redux";
+import { nhatkyCreator } from '../../redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '../../redux/reducers';
+
 export const NguoiDung = () => {
+    const dispatch = useDispatch();
     const [startValue, setStartValue] = useState<any>(null);
     const [endValue, setEndValue] = useState<any>(null);
     const [endOpen, setEndOpen] = useState<boolean>(false);
@@ -19,7 +25,11 @@ export const NguoiDung = () => {
 
 
     const [statusNotify, setStatusNotify] = useState<boolean>(false);
-    const navigate = useNavigate();
+    const [nhatKyList, setListNhatKy] = useState<any | undefined>([]);
+    
+
+    const { actionLoadNhatKy } = bindActionCreators(nhatkyCreator, dispatch);
+    const { listNhatKy } = useSelector((state: State) => state.nhatky);
 
     const date = new Date();
 
@@ -114,7 +124,7 @@ export const NguoiDung = () => {
         },
         {
             title: 'IP thực hiện',
-            dataIndex: 'IP',
+            dataIndex: 'diaChiIP',
             width: 300,
         },
         {
@@ -124,95 +134,6 @@ export const NguoiDung = () => {
         },
     ];
 
-    const nhatky = [
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-        {
-            "id": "2010001",
-            "tenDangNhap": "tuyetnguyen@12",
-            "thoiGianTacDong": "01/12/2021 15:12:17",
-            "IP": "192.168.3.1",
-            "thaoTac": 'Cập nhật thông tin dịch vụ DV_01',
-        },
-    ]
-
-    const [listNhatKy, setListNhatKy] = useState(nhatky);
-
     function itemRender(current: any, type: any, originalElement: any) {
         if (type === 'prev') {
             return <a><img src='/img/icon/left_pagination.png' alt='arrowImg' /></a>;
@@ -221,6 +142,16 @@ export const NguoiDung = () => {
         }
         return originalElement;
     }
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        actionLoadNhatKy();
+    }, [])
+
+    
+    useEffect(() => {
+        setListNhatKy(listNhatKy)
+    }, [listNhatKy])
+    
     return (
         <div className='baocaoContainer'>
             <Row>
@@ -269,7 +200,7 @@ export const NguoiDung = () => {
             <Row >
                 <Table
                     className="thietbiTable"
-                    dataSource={listNhatKy}
+                    dataSource={nhatKyList}
                     columns={columns}
                     size="large"
                     pagination={{ pageSize: 6, itemRender: itemRender }}

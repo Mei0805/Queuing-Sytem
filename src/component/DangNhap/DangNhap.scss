@@ -18,16 +18,23 @@
                 font-size: 18px;
                 font-weight: 700;
             }
+            input{
+                background: none;
+            }
 
             input::-moz-selection {
                 /* Code for Firefox */
                 color: black;
                 background: white;
             }
+            input::focus{
+                background: none;
+                border-color: #f6852a;
+            }
 
             input::selection {
-                color: black;
-                background: white;
+                //css khi select ô
+                border-color: #f6852a;
             }
 
             .loginBtn {
@@ -81,8 +88,7 @@
             }
 
             input::selection {
-                color: black;
-                background: white;
+                //nền chọn vùng input
             }
 
             .fpassBtn {
@@ -147,8 +153,7 @@
             }
 
             input::selection {
-                color: black;
-                background: white;
+                
             }
 
             .confirmBtn {

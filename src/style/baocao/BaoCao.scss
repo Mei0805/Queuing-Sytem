@@ -1,6 +1,9 @@
 .baocaoContainer{
     padding: 1rem 2rem;
 
+    .baocaoTable{
+        
+    }
     .ant-table-content{
         margin: 1rem 0;
         .ant-table-thead{
@@ -18,6 +21,7 @@
             }
         }
     }
+    
 
     button.download {
         width: 80px;
